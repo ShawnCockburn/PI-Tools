@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="600.0" prefWidth="900.0" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.shawncockburn.PITools.controllers.MainWindowController">
+    <children>
+
+        <Pane prefHeight="600.0" prefWidth="900.0" styleClass="actionPane-background" />
+        <AnchorPane fx:id="apView" layoutX="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+        <Pane fx:id="btnPane" prefWidth="200.0" style="-fx-background-color: #42424232;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <effect>
+                <DropShadow />
+            </effect>
+         <children>
+            <VBox fx:id="btnVbox" alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" prefHeight="600.0" prefWidth="200.0">
+               <padding>
+                  <Insets left="55.0" />
+               </padding>
+            </VBox>
+         </children>
+         <opaqueInsets>
+            <Insets left="55.0" />
+         </opaqueInsets></Pane>
+        <Pane fx:id="btnIconPane" layoutX="10.0" layoutY="10.0" prefWidth="55.0" style="-fx-background-color: derive(#42424232, 10%);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <effect>
+                <DropShadow />
+            </effect>
+        </Pane>
+
+    </children>
+</AnchorPane>
