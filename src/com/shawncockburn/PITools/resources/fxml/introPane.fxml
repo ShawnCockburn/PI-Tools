@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="introText" alignment="CENTER" contentDisplay="CENTER" layoutX="163.0" layoutY="200.0" maxHeight="200.0" maxWidth="400.0" prefHeight="200.0" prefWidth="400.0" textAlignment="CENTER" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="163.0" AnchorPane.rightAnchor="137.0" AnchorPane.topAnchor="200.0" />
+   </children>
+</AnchorPane>

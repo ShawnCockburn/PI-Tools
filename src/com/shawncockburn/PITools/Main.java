@@ -12,9 +12,12 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("resources/fxml/mainWindow.fxml"));
         primaryStage.setTitle("PI Tools");
-        primaryStage.setScene(new Scene(root, 900, 600));
+        primaryStage.setScene(new Scene(root, 890, 590));
+        primaryStage.setResizable(false);
+        primaryStage.setFullScreen(false);
         primaryStage.show();
     }
+
 
     public static void main(String[] args) {
         launch(args);
