@@ -1,10 +1,12 @@
 package com.shawncockburn.PITools;
 
+import com.shawncockburn.PITools.data.Data;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
 
 public class Main extends Application {
 
@@ -16,10 +18,20 @@ public class Main extends Application {
         primaryStage.setResizable(false);
         primaryStage.setFullScreen(false);
         primaryStage.show();
+
     }
 
 
     public static void main(String[] args) {
-        launch(args);
+        Boolean dataExists = true;
+        try {
+            Data.checkDataExists();
+        } catch (Exception e) {
+            e.printStackTrace();
+            dataExists = false;
+        }
+        if (dataExists) {
+            launch(args);
+        }
     }
 }

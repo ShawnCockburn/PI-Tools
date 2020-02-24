@@ -38,6 +38,12 @@ public class MainWindowController {
     private void initialize(){
         currentSelectedButton = addNavButton("Home", ViewLoader.VIEW.INTRO);
         currentSelectedButton.fire();
+        //todo: add this function
+        addNavButton("Web Convert", ViewLoader.VIEW.INTRO);
+        //todo: add this function
+        addNavButton("Find Images", ViewLoader.VIEW.INTRO);
+        //todo: add this function
+        addNavButton("Add Image Data", ViewLoader.VIEW.INTRO);
     }
 
     //this adds a button to the nav bar with a onclick event handler for the targeted ViewLoader.VIEW
@@ -61,7 +67,6 @@ public class MainWindowController {
         if (pane != null){
             apView.getChildren().add(pane);
         } else {
-            //todo: handle this outcome / error
             return false;
         }
         return true;

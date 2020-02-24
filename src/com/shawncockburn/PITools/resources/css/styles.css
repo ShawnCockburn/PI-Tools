@@ -17,14 +17,14 @@
 
 .custom-jfx-button-inactive {
     -fx-padding: 0.7em 0.57em;
-    -fx-font-size: 15.0px;
+    -fx-font-size: 14.0px;
     -fx-text-fill: #ffffff80;
     -fx-background-color: #512DA840;
 }
 
 .custom-jfx-button-active {
     -fx-padding: 0.7em 0.57em;
-    -fx-font-size: 15.0px;
+    -fx-font-size: 14.0px;
     -fx-font-weight: BOLD;
     -jfx-button-type: RAISED;
     -fx-text-fill: black;
