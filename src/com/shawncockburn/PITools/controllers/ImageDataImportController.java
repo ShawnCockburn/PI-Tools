@@ -208,7 +208,6 @@ public class ImageDataImportController extends WorkCompletableController {
             case INSERT:
                 if (!SqlImageDataDuplicateCheck(imageData, sqlUpdateType)) {
                     insertImageDataList.add(imageData);
-                    System.out.println("Insert: "+ imageData.getProductCode());
                 } else {
                     AlertWindowHelper.setupDefaultAlert(Alert.AlertType.WARNING, "Could not add product",  imageData.getProductCode() +" Already exists in database", "Try updating this product instead").show();
                     return imageData;
@@ -217,13 +216,11 @@ public class ImageDataImportController extends WorkCompletableController {
             case UPDATE:
                 if (!SqlImageDataDuplicateCheck(imageData, sqlUpdateType)) {
                     updateImageDataList.add(imageData);
-                    System.out.println("update: "+ imageData.getProductCode());
                 }
                 break;
             case DELETE:
                 if (!SqlImageDataDuplicateCheck(imageData, sqlUpdateType)) {
                     deleteImageDataList.add(imageData);
-                    System.out.println("delete: "+ imageData.getProductCode());
                 }
                 break;
 
