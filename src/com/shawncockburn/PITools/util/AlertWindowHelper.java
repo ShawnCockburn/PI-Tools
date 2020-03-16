@@ -3,12 +3,19 @@ package com.shawncockburn.PITools.util;
 import com.shawncockburn.PITools.data.ImageData;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
+import javafx.concurrent.Service;
+import javafx.concurrent.WorkerStateEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.stage.Modality;
+import javafx.stage.StageStyle;
+
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
@@ -189,6 +196,42 @@ public class AlertWindowHelper {
             }
             return null;
         });
+        return dialog;
+    }
+
+    public static Dialog setupProgressIndicationDialog(String title, String header, Service service){
+
+        Dialog<ImageData> dialog = new Dialog<>();
+        dialog.setTitle(title);
+        dialog.setHeaderText(header);
+        dialog.setWidth(400);
+
+
+        GridPane grid = new GridPane();
+        grid.setHgap(10);
+        grid.setVgap(10);
+        grid.setPadding(new Insets(10, 10, 10, 10));
+
+        Label label = new Label();
+        label.setPrefWidth(400);
+        label.textProperty().bind(service.messageProperty());
+        ProgressBar progressBar = new ProgressBar();
+        progressBar.setPrefWidth(350);
+        progressBar.progressProperty().bind(service.progressProperty());
+        Button button = new Button("Cancel");
+        button.setAlignment(Pos.CENTER);
+
+        grid.add(label, 0, 0);
+        grid.add(progressBar, 0, 1);
+        grid.add(button, 0, 2);
+
+        dialog.getDialogPane().setContent(grid);
+
+        button.setOnAction(event -> service.cancel());
+
+        dialog.setOnCloseRequest(event -> service.cancel());
+
+        dialog.initStyle(StageStyle.UNIFIED);
         return dialog;
     }
 
