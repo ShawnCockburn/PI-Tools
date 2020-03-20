@@ -50,7 +50,6 @@ public class MainWindowController {
         addNavButton("Web Convert", ViewLoader.VIEW.INTRO);
         //todo: add this function
         addNavButton("Find Images", ViewLoader.VIEW.INTRO);
-        //todo: add this function
         addNavButton("Image Data", ViewLoader.VIEW.IMAGE_DATA_IMPORT);
     }
 
@@ -60,7 +59,6 @@ public class MainWindowController {
         EventHandler<ActionEvent> eventHandler = event -> {
             if (currentLoadedController != null){
                 if (currentLoadedController.workIsComplete()){
-                    System.out.println(currentLoadedController.workIsComplete());
                     handleButtonClicked(button, view);
                 } else {
                     Optional<ButtonType> continueWork = AlertWindowHelper
@@ -112,10 +110,7 @@ public class MainWindowController {
     }
 
     private Boolean isExtendedFromWorkCompletableController(Class cls){
-        if (cls != WorkCompletableController.class && WorkCompletableController.class.isAssignableFrom(cls)) {
-            return true;
-        }
-        return false;
+        return cls != WorkCompletableController.class && WorkCompletableController.class.isAssignableFrom(cls);
     }
 
     private void setCurrentLoadedController(WorkCompletableController controller){
