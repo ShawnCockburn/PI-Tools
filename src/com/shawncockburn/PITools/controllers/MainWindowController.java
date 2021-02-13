@@ -47,7 +47,7 @@ public class MainWindowController {
         currentSelectedButton = addNavButton("Home", ViewLoader.VIEW.INTRO);
         currentSelectedButton.fire();
         //todo: add this function
-        addNavButton("Web Convert", ViewLoader.VIEW.INTRO);
+        addNavButton("Web Convert", ViewLoader.VIEW.PROCESS_IMAGES);
         //todo: add this function
         addNavButton("Find Images", ViewLoader.VIEW.INTRO);
         addNavButton("Image Data", ViewLoader.VIEW.IMAGE_DATA_IMPORT);

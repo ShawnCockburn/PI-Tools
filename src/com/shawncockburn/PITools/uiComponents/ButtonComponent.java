@@ -9,7 +9,7 @@ public class ButtonComponent {
     private static final String BUTTON_STYLE_ACTIVE = "custom-jfx-button-active";
     private static final String BUTTON_STYLE_INACTIVE = "custom-jfx-button-inactive";
 
-    public static enum BUTTON_STYLE{
+    public enum BUTTON_STYLE{
         ACTIVE,
         INACTIVE,
         DISABLED

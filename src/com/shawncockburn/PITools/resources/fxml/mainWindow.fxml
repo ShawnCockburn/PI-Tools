@@ -28,6 +28,5 @@
                 <DropShadow />
             </effect>
         </Pane>
-
     </children>
 </AnchorPane>

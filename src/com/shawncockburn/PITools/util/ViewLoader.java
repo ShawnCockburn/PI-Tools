@@ -3,9 +3,8 @@ package com.shawncockburn.PITools.util;
 import com.shawncockburn.PITools.controllers.ImageDataImportController;
 import com.shawncockburn.PITools.controllers.IntroController;
 import com.shawncockburn.PITools.controllers.MainWindowController;
+import com.shawncockburn.PITools.controllers.ProcessImageController;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 
 import java.io.File;
@@ -18,6 +17,7 @@ public class ViewLoader {
     public enum VIEW {
         INTRO,
         MAIN_WINDOW,
+        PROCESS_IMAGES,
         IMAGE_DATA_IMPORT
     }
     private Map<Pane, Object> loadedControllers = new HashMap<>();
@@ -42,6 +42,8 @@ public class ViewLoader {
                 return new IntroController();
             case MAIN_WINDOW:
                 return new MainWindowController();
+            case PROCESS_IMAGES:
+                return new ProcessImageController();
             case IMAGE_DATA_IMPORT:
                 return new ImageDataImportController();
             default:
@@ -55,6 +57,8 @@ public class ViewLoader {
                 return new File("src/com/shawncockburn/PITools/resources/fxml/introPane.fxml").toURI().toURL();
             case MAIN_WINDOW:
                 return new File("src/com/shawncockburn/PITools/resources/fxml/mainWindow.fxml").toURI().toURL();
+            case PROCESS_IMAGES:
+                return new File("src/com/shawncockburn/PITools/resources/fxml/processImagePane.fxml").toURI().toURL();
             case IMAGE_DATA_IMPORT:
                 return new File("src/com/shawncockburn/PITools/resources/fxml/imageDataImportPane.fxml").toURI().toURL();
             default:
